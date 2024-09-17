@@ -9,7 +9,7 @@ import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageImpl;
 import org.springframework.data.domain.PageRequest;
 import uz.jk.taskmanagement.domain.constants.TaskStatus;
-import uz.jk.taskmanagement.domain.dto.TaskRequest;
+import uz.jk.taskmanagement.domain.dto.request.TaskRequest;
 import uz.jk.taskmanagement.domain.dto.response.PageResponse;
 import uz.jk.taskmanagement.domain.entity.TaskEntity;
 import uz.jk.taskmanagement.domain.exception.DataNotfoundException;

@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
-import uz.jk.taskmanagement.domain.dto.TaskRequest;
+import uz.jk.taskmanagement.domain.dto.request.TaskRequest;
 import uz.jk.taskmanagement.domain.dto.response.PageResponse;
 import uz.jk.taskmanagement.domain.entity.TaskEntity;
 import uz.jk.taskmanagement.service.task.TaskService;
