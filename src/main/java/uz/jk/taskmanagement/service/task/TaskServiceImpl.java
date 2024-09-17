@@ -6,6 +6,7 @@ import org.springframework.data.domain.PageRequest;
 import org.springframework.stereotype.Service;
 import uz.jk.taskmanagement.domain.constants.TaskStatus;
 import uz.jk.taskmanagement.domain.dto.TaskRequest;
+import uz.jk.taskmanagement.domain.dto.response.PageResponse;
 import uz.jk.taskmanagement.domain.entity.TaskEntity;
 import uz.jk.taskmanagement.domain.exception.DataNotfoundException;
 import uz.jk.taskmanagement.repository.TaskRepository;
@@ -38,8 +39,16 @@ public class TaskServiceImpl implements TaskService {
     }
 
     @Override
-    public Page<TaskEntity> findAll(int page, int size) {
-        return taskRepository.findAll(PageRequest.of(page, size));
+    public PageResponse<TaskEntity> findAll(int page, int size) {
+        Page<TaskEntity> pageResult = taskRepository.findAll(PageRequest.of(page, size));
+
+        return PageResponse.<TaskEntity>builder()
+                .page(pageResult.getNumber())
+                .size(pageResult.getSize())
+                .totalElements(pageResult.getTotalElements())
+                .totalPages(pageResult.getTotalPages())
+                .content(pageResult.getContent())
+                .build();
     }
 
     @Override
