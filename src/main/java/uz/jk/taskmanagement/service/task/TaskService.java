@@ -1,7 +1,6 @@
 package uz.jk.taskmanagement.service.task;
 
-import org.springframework.data.domain.Page;
-import uz.jk.taskmanagement.domain.dto.TaskRequest;
+import uz.jk.taskmanagement.domain.dto.request.TaskRequest;
 import uz.jk.taskmanagement.domain.dto.response.PageResponse;
 import uz.jk.taskmanagement.domain.entity.TaskEntity;
 
