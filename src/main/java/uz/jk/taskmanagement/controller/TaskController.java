@@ -2,6 +2,7 @@ package uz.jk.taskmanagement.controller;
 
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.tags.Tag;
+import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -32,7 +33,7 @@ public class TaskController {
             summary = "Create a Task",
             description = "Creates a task from input. Required fields: 'title'. Date format: 'yyyy-MM-dd'."
     )
-    public TaskEntity create(@RequestBody TaskRequest taskRequest) {
+    public TaskEntity create(@Valid @RequestBody TaskRequest taskRequest) {
         return taskService.save(taskRequest);
     }
 

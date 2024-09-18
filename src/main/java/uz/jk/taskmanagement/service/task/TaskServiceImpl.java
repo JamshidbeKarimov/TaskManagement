@@ -38,7 +38,10 @@ public class TaskServiceImpl implements TaskService {
     public TaskEntity findById(UUID id) {
         log.debug("Finding task by id: {}", id);
         return taskRepository.findById(id)
-                .orElseThrow(() -> new DataNotfoundException("task not found"));
+                .orElseThrow(() -> {
+                    log.error("Task not found by id: {}", id);
+                    return new DataNotfoundException("task not found");
+                });
     }
 
     @Override

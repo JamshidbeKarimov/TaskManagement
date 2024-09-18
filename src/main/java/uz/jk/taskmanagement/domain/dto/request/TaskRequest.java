@@ -1,14 +1,14 @@
 package uz.jk.taskmanagement.domain.dto.request;
 
 
+import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
 import uz.jk.taskmanagement.domain.constants.TaskStatus;
 
 import java.time.LocalDate;
 
-
 public record TaskRequest(
-        @NotNull String title,
+        @NotBlank(message = "title cannot me empty or blank") String title,
         String description,
         LocalDate dueDate,
         TaskStatus status
