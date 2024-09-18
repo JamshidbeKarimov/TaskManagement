@@ -51,3 +51,7 @@ This is a Task Management System built with Spring Boot. It provides a RESTful A
 To run unit tests:
 ```sh
 ./gradlew test
+```
+
+### API Documentation
+API documentation is available at `/swagger` once the application is running.
